@@ -5,6 +5,9 @@ docker source files to build a docker image that is going to be available throug
 https://hub.docker.com/repository/docker/pplaquette/trildadevcenter-docker-android/general
 https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android
 
+#available docker image tags to pull
+https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android/tags
+
 # Note from docker hub
 this docker image is used for a Gitlab CI/CD to build android applications
 (I guess it can be used with other CI/CD pipelines relying on using a docker image, but it is yet untested, if you do it , please let me know)
