@@ -5,7 +5,7 @@ docker source files to build a docker image that is going to be available throug
 https://hub.docker.com/repository/docker/pplaquette/trildadevcenter-docker-android/general
 https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android
 
-#available docker image tags to pull
+# available docker image tags to pull
 https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android/tags
 
 # Note from docker hub
