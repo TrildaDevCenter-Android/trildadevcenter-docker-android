@@ -8,11 +8,17 @@ https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android
 # available docker image tags to pull
 https://hub.docker.com/r/pplaquette/trildadevcenter-docker-android/tags
 
+```
 docker pull pplaquette/trildadevcenter-docker-android:latest
+```
 
+```
 docker pull pplaquette/trildadevcenter-docker-android:level-33
+```
 
+```
 docker pull pplaquette/trildadevcenter-docker-android:levels-24-33
+```
 
 # Note from docker hub
 this docker image is used for a Gitlab CI/CD to build android applications
