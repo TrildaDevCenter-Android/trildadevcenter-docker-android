@@ -26,7 +26,9 @@ this docker image is used for a Gitlab CI/CD to build android applications
 
 it currently uses
 - Ubuntu 24.10 (even if this is still "early bird" as 24.10 will be released in october  2024)
-( the auto update involved in the script is actually updating to 24.10... so ...)
+  
+ ( the auto update involved in the script is actually updating to 24.10... so ...)
+
 - JDK 17
 - fastlane
 - Android SDK 35
@@ -76,7 +78,9 @@ contains the androidSDK and build tool versions for api levels 24 to 35. This im
 ## build :  
 for preview 
 
+```
 docker build -t pplaquette/trildadevcenter-android:preview .
+```
 
 for each folder 
 
@@ -86,8 +90,10 @@ the tag here is preview
 
 ## pushing to docker
  for latest 
- 
- docker push pplaquette/trildadevcenter-android:latest  
+
+```
+docker push pplaquette/trildadevcenter-android:latest  
+```
 
 for each folder 
 
