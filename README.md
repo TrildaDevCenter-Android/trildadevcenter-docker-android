@@ -78,7 +78,9 @@ for preview
 
 docker build -t pplaquette/trildadevcenter-android:preview .
 
-for each folder with the correct tag tag here is preview
+for each folder 
+
+the tag here is preview
 
 ## fix errors 
 
@@ -87,7 +89,9 @@ for each folder with the correct tag tag here is preview
  
  docker push pplaquette/trildadevcenter-android:latest  
 
-for each folder with the correct tag tag here is latest
+for each folder 
+
+the  tag here is latest
 
 
 # comit has to be done folder by folder 
