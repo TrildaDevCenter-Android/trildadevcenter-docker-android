@@ -1,6 +1,6 @@
 # This Dockerfile creates a static build image for CI
 
-FROM ubuntu:23.04
+FROM ubuntu:24.10
 
 RUN echo "apt-get update..."
 
