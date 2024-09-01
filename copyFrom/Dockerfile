@@ -1,6 +1,6 @@
 # This Dockerfile creates a static build image for CI
 
-FROM ubuntu:23.04
+FROM ubuntu:24.10
 
 RUN echo "apt-get update..."
 
@@ -32,19 +32,19 @@ RUN echo ${PWD}
 # Just matched `app/build.gradle`
 # ANDROID_COMPILE_SDK is the version of Android you're compiling with.
 # It should match compileSdkVersion.
-ENV ANDROID_COMPILE_SDK: "33"
+ENV ANDROID_COMPILE_SDK: "35"
 
 # Just matched `app/build.gradle`
 # ANDROID_BUILD_TOOLS is the version of the Android build tools you are using.
 # It should match buildToolsVersion.
-ENV ANDROID_BUILD_TOOLS "33.0.2"
+ENV ANDROID_BUILD_TOOLS "35.0.0"
 
 # It's what version of the command line tools we're going to download from the official site.
 # Official Site-> https://developer.android.com/studio/index.html
 # There, look down below at the cli tools only, sdk tools package is of format:
 #        commandlinetools-os_type-ANDROID_SDK_TOOLS_latest.zip
 # when the script was last modified for latest compileSdkVersion, it was which is written down below
-ENV ANDROID_SDK_TOOLS "9477386"
+ENV ANDROID_SDK_TOOLS "11076708"
 
 ENV ANDROID_HOME /android-home
 
@@ -67,16 +67,19 @@ RUN apt-get --quiet install -y tar
 RUN echo "unzip installing..."
 RUN apt-get --quiet install -y unzip
 
-#RUN echo "lib32stdc++6 installing..."
-#RUN apt-get --quiet install -y lib32stdc++6
+RUN echo "gcc-13  installing...for lib32stdc++6"
+RUN apt-get --quiet install -y gcc-13
 
-#RUN echo "lib32z1 installing..."
-#RUN apt-get --quiet install -y lib32z1
+RUN echo "zlib  zlib1g-dev lib32z1-dev  installing...for lib32z1"
+RUN apt-get --quiet install -y zlib1g-dev lib32z1-dev
 
 RUN echo "build essential installing..."
 RUN apt-get --quiet install -y build-essential
 
+#FROM AOSP
+#RUN apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
 
+# PREVOUSLY USED
 #RUN apt-get --quiet install -y wget apt-utils tar unzip lib32stdc++6 lib32z1 build-essential ruby ruby-dev
 
 RUN echo "ruby installing..."
@@ -122,9 +125,9 @@ RUN yes | sdkmanager --sdk_root=${ANDROID_HOME} --licenses || true
 
 
 RUN sdkmanager --sdk_root=${ANDROID_HOME} --update
-RUN sdkmanager --sdk_root=${ANDROID_HOME} "platforms;android-33"
+RUN sdkmanager --sdk_root=${ANDROID_HOME} "platforms;android-35"
 RUN sdkmanager --sdk_root=${ANDROID_HOME} "platform-tools"
-RUN sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;33.0.2"
+RUN sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;35.0.0"
 RUN sdkmanager --sdk_root=${ANDROID_HOME} "extras;android;m2repository"
 RUN sdkmanager --sdk_root=${ANDROID_HOME} "extras;google;m2repository"
 RUN sdkmanager --sdk_root=${ANDROID_HOME} "extras;google;google_play_services"
