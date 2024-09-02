@@ -6,7 +6,7 @@ FROM ubuntu:24.10
 LABEL "maintainer"="Paul Plaquette <paul.plaquette@gmail.com>"
 LABEL "com.trildadevcenter"="trildaDevCenter"
 LABEL "trildaDevCenter"="trildadevcenter@gmail.com"
-LABEL "tag"="preview, levels-24-35"
+LABEL "tag"="levels-24-35"
 LABEL "version"="2.0.0"
 LABEL "description"="This Dockerfile allows to build Android project on Ubuntu 24.10 \
 Api Levels are indicated by the label level-XX or levels-XX-YY \
@@ -75,7 +75,7 @@ RUN apt-get update -y && \
     apt-get dist-upgrade -y
 
 RUN echo "wget installing..."
-#RUN apt-get install -y wget
+RUN apt-get install -y wget
 
 
 RUN echo "apt-utils installing..."
